@@ -17,4 +17,7 @@ RUN chmod +x ./Terraria/TerrariaServer*
 COPY ./server.config ./Terraria/server.config
 RUN cp basic-tools/tmux.conf ~/.tmux.conf
 
-CMD bash
+WORKDIR ./Terraria
+
+# CMD bash
+CMD ./TerrariaServer.bin.x86_64 -config server.config
