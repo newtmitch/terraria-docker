@@ -14,10 +14,9 @@ RUN rm -rf 1353
 RUN rm -f ./Terraria/TerrariaServer.bin.x86 ./Terraria/TerrariaServer
 RUN chmod +x ./Terraria/TerrariaServer*
 
-COPY ./server.config ./Terraria/server.config
 RUN cp basic-tools/tmux.conf ~/.tmux.conf
 
 WORKDIR ./Terraria
 
 # CMD bash
-CMD ./TerrariaServer.bin.x86_64 -config server.config
+CMD ./TerrariaServer.bin.x86_64 -config /usr/local/terraria/server.config
